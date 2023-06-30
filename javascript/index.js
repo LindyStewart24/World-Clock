@@ -1,4 +1,14 @@
 function updateTime() {
+  let barbadosElement = document.querySelector("#barbados");
+  let barbadosDateElement = barbadosElement.querySelector(".date");
+  let barbadosTimeElement = barbadosElement.querySelector(".time");
+  let barbadosCurrentTime = moment().tz("America/Barbados");
+
+  barbadosDateElement.innerHTML = barbadosCurrentTime.format("MMMM D, YYYY");
+  barbadosTimeElement.innerHTML = barbadosCurrentTime.format(
+    "h:mm:ss [<small>]A[</small>]"
+  );
+
   let losAngelesElement = document.querySelector("#losAngeles");
   let losAngelesDateElement = losAngelesElement.querySelector(".date");
   let losAngelesTimeElement = losAngelesElement.querySelector(".time");
